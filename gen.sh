@@ -52,4 +52,4 @@ generate_index() {
 
 
 # Generate index for current directory
-generate_index "." "index.html"
+generate_index "../lyy720301.github.io" "index.html"
