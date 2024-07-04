@@ -16,6 +16,9 @@ generate_index() {
     echo "<head>" >> "$output_file"
     echo "    <meta charset=\"UTF-8\">" >> "$output_file"
     echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> "$output_file"
+    echo "    <link rel="icon" href="/static/favicon.ico">" >> "$output_file"
+    echo "    <link rel="stylesheet" href="/static/index.css">" >> "$output_file"
+
     local current_dir=$parent_dir
     echo "    <title>$current_dir</title>" >> "$output_file"
     echo "</head>" >> "$output_file"
@@ -31,9 +34,8 @@ generate_index() {
             if [[ "$subdir" != "assets" && "$subdir" != "index.html" && "$subdir" != "cdn-cgi"&& "$subdir" != "static"&& "$subdir" != "gen.sh" ]]; then
 
                 echo "        <li><a href=\"$subdir/index.html\">$subdir/</a></li>" >> "$output_file"
+                generate_index "$file" "$file/index.html"
             fi
-            generate_index "$file" "$file/index.html"
-
 
         elif [[ "$parent_dir" != "assets" && "$parent_dir" != "cdn-cgi" ]]; then
             filename=$(basename "$file")
