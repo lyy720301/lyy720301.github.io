@@ -16,6 +16,9 @@ generate_index() {
     echo "<head>" >> "$output_file"
     echo "    <meta charset=\"UTF-8\">" >> "$output_file"
     echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> "$output_file"
+    echo "    <link rel="icon" href="/static/favicon.ico">" >> "$output_file"
+    echo "    <link rel="stylesheet" href="/static/index.css">" >> "$output_file"
+
     local current_dir=$parent_dir
     echo "    <title>$current_dir</title>" >> "$output_file"
     echo "</head>" >> "$output_file"
