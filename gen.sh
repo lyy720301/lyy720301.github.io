@@ -34,9 +34,8 @@ generate_index() {
             if [[ "$subdir" != "assets" && "$subdir" != "index.html" && "$subdir" != "cdn-cgi"&& "$subdir" != "static"&& "$subdir" != "gen.sh" ]]; then
 
                 echo "        <li><a href=\"$subdir/index.html\">$subdir/</a></li>" >> "$output_file"
+                generate_index "$file" "$file/index.html"
             fi
-            generate_index "$file" "$file/index.html"
-
 
         elif [[ "$parent_dir" != "assets" && "$parent_dir" != "cdn-cgi" ]]; then
             filename=$(basename "$file")
