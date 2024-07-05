@@ -24,6 +24,7 @@ generate_index() {
     echo "</head>" >> "$output_file"
     echo "<body>" >> "$output_file"
     # Get the current directory name
+    echo "    <a href="../">上一页</a>" >> "$output_file"
     echo "    <h1>$current_dir</h1>" >> "$output_file"
     echo "    <ul>" >> "$output_file"
 
