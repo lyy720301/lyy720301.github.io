@@ -26,7 +26,7 @@ generate_index() {
     # Get the current directory name
     echo "    <a href="../">上一页</a>" >> "$output_file"
     echo "    <h1>$current_dir</h1>" >> "$output_file"
-    echo "    <ul>" >> "$output_file"
+    echo "    <ul style=\"padding-bottom: 10em\">" >> "$output_file"
 
     for file in "$dir"/*; do
         if [ -d "$file" ]; then
